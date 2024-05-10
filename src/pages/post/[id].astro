@@ -1,0 +1,29 @@
+astroCopy code
+---
+const { id } = Astro.params;
+const postRes = await fetch(`http://localhost:1337/api/articles/`);
+const post = await postRes.json();
+const commentsRes = await fetch(`http://localhost:1337/api/articles/`);
+const comments = await commentsRes.json();
+---
+
+<html>
+<head>
+  <title>{post.title}</title>
+</head>
+<body>
+  <article>
+    <h1>{post.title}</h1>
+    <p>{post.body}</p>
+    <section>
+      <h2>Comentarios</h2>
+      {comments.map(comment => (
+        <div key={comment.id}>
+          <p><strong>{comment.name}:</strong> {comment.body}</p>
+        </div>
+      ))}
+    </section>
+  </article>
+</body>
+</html>
+

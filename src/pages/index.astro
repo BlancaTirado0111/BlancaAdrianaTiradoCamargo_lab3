@@ -5,6 +5,21 @@ import Movies from "@components/movies/Movies.astro";
 
 <Layout title="Welcome to Astro.">
   <Movies />
+  <button onclick="location.href='/blog'">Ir al Blog</button>
+
 </Layout>
 
-<style></style>
+<style>
+button {
+  background-color: #27e62d; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
